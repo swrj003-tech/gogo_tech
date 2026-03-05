@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Colors - Tailwind v4 uses specific naming conventions */
+  --color-primary: #FED75F; /* GoGo Yellow */
+  --color-accent: #ED6A21; /* Imperial Orange */
+  --color-dark: #1f242e;
+  --color-neutral-surface: #F8FAFC;
+  --color-background-light: #ffffff;
+
+  /* Fonts */
+  --font-family-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-family-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.06);
+  --shadow-card: 0 2px 12px rgb(0 0 0 / 0.04);
+
+  /* Border radius */
+  --radius-3xl: 1.5rem;
+  --radius-pill: 9999px;
+}
+
+/* Animations - Keep outside @theme */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Utilities */
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+
+.shadow-tech {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Accessibility Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background-light);
+  color: #0f172a;
+  font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Details/Summary marker hide */
+details>summary {
+  list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+  display: none;
+}
